@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Paulo Ochava, BSIT 3D student.">
+  <title>Paulo Ochava | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --panel: #111c30;
+      --panel-light: #17243a;
+      --text: #e5edf7;
+      --muted: #9aabc1;
+      --accent: #38bdf8;
+      --accent-dark: #0ea5e9;
+      --border: rgba(148, 163, 184, .18);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      position: fixed; inset: 0 0 auto; z-index: 10;
+      background: rgba(11, 17, 32, .92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    nav {
+      max-width: 1100px; margin: auto; padding: 17px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 20px;
+    }
+    .logo { color: var(--accent); font-size: 1.25rem; font-weight: 800; }
+    .nav-links { display: flex; gap: 22px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .94rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+    main { max-width: 1100px; margin: auto; padding: 0 24px; }
+    section { padding: 100px 0 45px; scroll-margin-top: 65px; }
+    #home {
+      min-height: 100vh; display: flex; align-items: center;
+      gap: 55px; padding-top: 120px;
+    }
+    .hero-copy { flex: 1; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: .8rem; }
+    h1 { font-size: clamp(2.7rem, 7vw, 4.8rem); line-height: 1.08; margin: 14px 0; }
+    h1 span, .accent { color: var(--accent); }
+    .hero-copy p, .section-intro { color: var(--muted); max-width: 650px; }
+    .hero-copy p { font-size: 1.08rem; }
+    .button {
+      display: inline-block; margin-top: 25px; padding: 12px 22px;
+      background: var(--accent); color: #07111e; border-radius: 8px;
+      font-weight: 800; transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-3px); background: #7dd3fc; }
+    .profile {
+      width: 270px; height: 270px; flex: 0 0 270px;
+      border-radius: 50%; border: 5px solid var(--accent);
+      background: linear-gradient(145deg, #1e3a5f, #111c30);
+      display: grid; place-items: center; color: var(--accent);
+      font-size: 5rem; font-weight: 800;
+      box-shadow: 0 0 45px rgba(56, 189, 248, .16);
+    }
+    .section-title { font-size: 2rem; margin-bottom: 12px; }
+    .section-title::after {
+      content: ""; display: block; width: 55px; height: 4px;
+      margin-top: 10px; border-radius: 5px; background: var(--accent);
+    }
+    .about-card, .card {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+    }
+    .about-card { margin-top: 24px; color: var(--muted); }
+    .about-card strong { color: var(--text); }
+    .grid {
+      display: grid; grid-template-columns: repeat( auto-fit, minmax(220px, 1fr));
+      gap: 18px; margin-top: 28px;
+    }
+    .card { transition: transform .25s, border-color .25s; }
+    .card:hover { transform: translateY(-6px); border-color: var(--accent); }
+    .card h3 { color: var(--accent); margin-bottom: 9px; }
+    .card p { color: var(--muted); }
+    .skill-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .project-tag {
+      display: inline-block; margin-top: 14px; padding: 5px 10px;
+      color: var(--accent); background: rgba(56,189,248,.1);
+      border-radius: 20px; font-size: .8rem;
+    }
+    .contact-card { margin-top: 25px; }
+    .contact-card p { margin: 9px 0; color: var(--muted); }
+    .contact-card a { color: var(--accent); }
+    footer {
+      margin-top: 65px; padding: 25px 24px; text-align: center;
+      border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem;
+    }
+    @media (max-width: 700px) {
+      nav { flex-direction: column; padding: 13px 16px; }
+      .nav-links { gap: 13px; flex-wrap: wrap; justify-content: center; }
+      .nav-links a { font-size: .82rem; }
+      #home { flex-direction: column-reverse; justify-content: center; text-align: center; gap: 28px; }
+      .profile { width: 190px; height: 190px; flex-basis: 190px; font-size: 3.5rem; }
+      .hero-copy p { margin: auto; }
+      section { padding-top: 85px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="#home">Paulo Ochava</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">BSIT 3D Student</div>
+        <h1>Hello, I'm <span>Paulo Ochava</span></h1>
+        <p>
+          An Information Technology student who enjoys learning about technology,
+          exploring creative ideas, and building useful digital solutions. I am
+          continuously improving my skills and gaining experience through projects
+          and collaboration.
+        </p>
+        <a class="button" href="#projects">View My Project</a>
+      </div>
+      <div class="profile" aria-label="Paulo Ochava initials">PO</div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-intro">A little introduction about who I am and what I do.</p>
+      <div class="about-card">
+        <p>
+          My name is <strong>Paulo Ochava</strong>, and I am a
+          <strong>BSIT 3D</strong> student. I am interested in the field of
+          Information Technology, especially in understanding how technology can
+          solve everyday problems. I value teamwork, continuous learning, and
+          developing practical skills that I can use in future projects and in my
+          career as an IT professional.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">My Skills</h2>
+      <p class="section-intro">Some of the skills I am developing as an IT student.</p>
+      <div class="grid">
+        <article class="card"><div class="skill-icon">💻</div><h3>Basic Web Development</h3><p>Understanding the fundamentals of creating and organizing web pages.</p></article>
+        <article class="card"><div class="skill-icon">🧩</div><h3>Problem Solving</h3><p>Analyzing challenges and looking for practical ways to solve them.</p></article>
+        <article class="card"><div class="skill-icon">🤝</div><h3>Teamwork</h3><p>Working with classmates, sharing ideas, and contributing to group projects.</p></article>
+        <article class="card"><div class="skill-icon">📚</div><h3>Willingness to Learn</h3><p>Learning new tools, technologies, and concepts to improve my abilities.</p></article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-intro">A project I have worked on with my team.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>PawConnected</h3>
+          <p>
+            PawConnected is a project that uses an AI matching engine to connect
+            people with shelter animals based on their lifestyle, home, and
+            preferences. Its goal is to help make pet adoption more suitable and
+            increase adoption opportunities for shelter animals.
+          </p>
+          <span class="project-tag">AI • Pet Adoption</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <p class="section-intro">Feel free to reach out through my email.</p>
+      <div class="about-card contact-card">
+        <p><strong>Email:</strong> <a href="mailto:ochavapaulo10@gmail.com">ochavapaulo10@gmail.com</a></p>
+        <p><strong>Course/Section:</strong> BSIT 3D</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Paulo Ochava. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
